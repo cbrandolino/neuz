@@ -1,10 +1,27 @@
 /*
+  #SPLASH-CONTAINER
+
+  The splash page.
+
+  Path: body > div#app
+*/
+
+#splash-copy {
+  position: absolute;
+  width: 600px;
+  height: 371px;
+  top: 20%;
+  margin: auto;
+  background-color: black;
+}
+
+/*
   #SIDENAV
 
   Main navigation menu.
   "Strongly inspired" by the bootstrap documentation's sidenav.
 
-  Path: body > div.container-fluid > div.row-fluid > div.left-column
+  Path: body > div#app > div.container-fluid > div.row-fluid > div.left-column
   Structure: ul > li > a
 
 */
@@ -34,7 +51,7 @@
 
   Play/pause, previous and next buttons.
 
-  Path: body > div.container-fluid > div.navbar > div.navbar-inner
+  Path: body > div#app > div.container-fluid > div.navbar > div.navbar-inner
   Structure: div#player-controls > div.btn-group > button.play-pause
                                                          .next
                                                          .prev 
