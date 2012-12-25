@@ -1,19 +1,64 @@
+.txt-light {
+  color: white;
+}
+
+/*
+   .LEFT-COLUMN and .RIGHT-COLUMN
+
+   The two main columns, menu and active section
+*/
+
+.row-fluid [class*="span"]:first-child.left-column {
+  margin-left: -20px;
+  margin-right: 20px;
+}
+
 /*
   #SPLASH-CONTAINER
 
   The splash page.
 
-  Path: body > div#app
+  Path: div#app
 */
 
-#splash-copy {
-  position: absolute;
-  width: 600px;
-  height: 371px;
-  top: 20%;
-  margin: auto;
-  background-color: black;
+#splash-container {
+  padding: 0;
+  overflow: hidden;
 }
+
+#splash-container > .copy {
+  position: absolute;
+  width: 560px;
+  top: 30%;
+  left: 50%;
+  margin-left: -300px;
+  text-align: center;
+  opacity: 0.9;
+  z-index: 3;
+}
+
+#splash-container > .copy .sc-connect {
+  cursor: pointer;
+}
+
+#splash-container > .grid {
+  width: 120%;
+  height: 120%;
+  margin-left: -10%;
+  margin-top: -10%;
+  background-image: url('../img/grid.png');
+  background-color: black;
+  line-height: 0;
+}
+
+#splash-container > .grid > .cell {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  display: inline-block;
+  opacity: 0.5;
+  background-color: black;
+} 
 
 /*
   #SIDENAV
@@ -21,13 +66,12 @@
   Main navigation menu.
   "Strongly inspired" by the bootstrap documentation's sidenav.
 
-  Path: body > div#app > div.container-fluid > div.row-fluid > div.left-column
-  Structure: ul > li > a
+  Path: div#app > div.container-fluid > div.row-fluid > div.left-column
 
 */
 
 #sidenav {
-  margin: 30px 0 0;
+  margin: 0;
   padding: 0;
   background-color: #fff;
 }
@@ -51,10 +95,7 @@
 
   Play/pause, previous and next buttons.
 
-  Path: body > div#app > div.container-fluid > div.navbar > div.navbar-inner
-  Structure: div#player-controls > div.btn-group > button.play-pause
-                                                         .next
-                                                         .prev 
+  Path: div#app > div.container-fluid > div.navbar > div.navbar-inner
 */
 
 #player-controls > .btn-group {

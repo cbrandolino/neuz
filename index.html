@@ -16,12 +16,18 @@
 </div>
 <!--START TEMPLATES--><script type='text/template' id='splash'>
                       <div class="container-fluid" id="splash-container">
-  <div id="splash-copy">
-    I am a splash copy
+  <div class="copy txt-light">
+    <h1>
+      <span="normal">neuz is noises</span>
+    </h1>
+    <p>
+      Discover, listen and share like never before.
+    </p>
+    <p>
+      <img class="sc-connect" src="img/sc-connect.png" />
+    </p>
   </div>
-  <div class="row-fluid">
-    <div class="span12">
-    </div>
+  <div class="grid">
   </div>
 </div>
 
@@ -30,34 +36,33 @@
   <div class="row-fluid">
     <div class="span2 left-column">
       <ul class="nav nav-list" id="sidenav">
-        <li>
-          <a href="#">
+        <li class="<%=(active == "home") ? 'active' : ''%>">
+          <a href="#" data-section="home">
             <i class="icon-chevron-right"></i>
             Home
           </a>
         </li>
-        <li>
-          <a href="#">
+        <li class="<%=(active == "search") ? 'active' : ''%>">
+          <a href="#" data-section="search">
             <i class="icon-chevron-right"></i>
             Search
           </a>
         </li>
-        <li>
-          <a href="#">
+        <li class="<%=(active == "now-playing") ? 'active' : ''%>">
+          <a href="#" data-section="now-playing">
             <i class="icon-chevron-right"></i>
             Now playing
           </a>
         </li>
-        <li>
-          <a href="#">
+        <li class="<%=(active == "playlists") ? 'active' : ''%>">
+          <a href="#" data-section="playlists">
             <i class="icon-chevron-right"></i>
             Playlists
           </a>
         </li>
       </ul>
     </div>
-    <div class="span9">
-      content
+    <div class="span9" id="section">
     </div>
   </div>
   <div class="navbar navbar-inverse navbar-fixed-bottom">
@@ -80,6 +85,11 @@
     </div>
   </div>
 </div>
+
+                      </script><script type='text/template' id='search'>
+                      <form class="navbar-search">
+  <input type="text" class="search-query" placeholder="Search">
+</form>
 
                       </script><!--END TEMPLATES-->
 </body>

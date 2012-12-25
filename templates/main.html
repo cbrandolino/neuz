@@ -2,34 +2,33 @@
   <div class="row-fluid">
     <div class="span2 left-column">
       <ul class="nav nav-list" id="sidenav">
-        <li>
-          <a href="#">
+        <li class="<%=(active == "home") ? 'active' : ''%>">
+          <a href="#" data-section="home">
             <i class="icon-chevron-right"></i>
             Home
           </a>
         </li>
-        <li>
-          <a href="#">
+        <li class="<%=(active == "search") ? 'active' : ''%>">
+          <a href="#" data-section="search">
             <i class="icon-chevron-right"></i>
             Search
           </a>
         </li>
-        <li>
-          <a href="#">
+        <li class="<%=(active == "now-playing") ? 'active' : ''%>">
+          <a href="#" data-section="now-playing">
             <i class="icon-chevron-right"></i>
             Now playing
           </a>
         </li>
-        <li>
-          <a href="#">
+        <li class="<%=(active == "playlists") ? 'active' : ''%>">
+          <a href="#" data-section="playlists">
             <i class="icon-chevron-right"></i>
             Playlists
           </a>
         </li>
       </ul>
     </div>
-    <div class="span9">
-      content
+    <div class="span9" id="section">
     </div>
   </div>
   <div class="navbar navbar-inverse navbar-fixed-bottom">
