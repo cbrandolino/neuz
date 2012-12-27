@@ -15,10 +15,10 @@ var AppRouter = Backbone.Router.extend({
   // Redirect to splash page id user is not authenticated.
   auth: function(callback) {
     var self = this
-    if (SC.isConnected())
+    //if (SC.isConnected())
       callback()
-    else
-      self.navigate("!splash", true)
+    //else
+    //  self.navigate("!splash", true)
   },
 
   splash: function() {

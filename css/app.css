@@ -7,11 +7,17 @@
 
    The two main columns, menu and active section
 */
-
-.row-fluid [class*="span"]:first-child.left-column {
-  margin-left: -20px;
-  margin-right: 20px;
+.row-fluid [class*="span"].right-column {
+  margin-bottom: 30px;
 }
+
+/*
+  .TRACK-LIST
+
+  Generic track list, with cover images and all.
+*/
+
+
 
 /*
   #SPLASH-CONTAINER
@@ -66,11 +72,13 @@
   Main navigation menu.
   "Strongly inspired" by the bootstrap documentation's sidenav.
 
-  Path: div#app > div.container-fluid > div.row-fluid > div.left-column
-
 */
 
 #sidenav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 200px;
   margin: 0;
   padding: 0;
   background-color: #fff;

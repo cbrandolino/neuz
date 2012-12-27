@@ -3,7 +3,7 @@ goog.require('Views.Search')
 
 App.views.main = Backbone.View.extend({
   initialize: function() {
-    this.activeSection = "search"
+    this.activeSection = 'search'
     this.render()
   },
   render: function() {

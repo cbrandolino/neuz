@@ -31,6 +31,36 @@
   </div>
 </div>
 
+                      </script><script type='text/template' id='tracks-collection'>
+                      <table class="track-list table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody class="tracks">
+  </tbody>
+</table>
+
+                      </script><script type='text/template' id='track'>
+                      <tr>
+  <td>
+    <img width=20 height=20 src="<%=artwork_url || user.avatar_url%>" />
+  </td>
+  <td>
+    <%=title%>
+  </td>
+  <td>
+    <%=user.username%>
+  </td>
+  <td>
+    <%=duration%>
+  </td>
+</tr>
+
                       </script><script type='text/template' id='main'>
                       <div class="container-fluid">
   <div class="row-fluid">
@@ -62,7 +92,7 @@
         </li>
       </ul>
     </div>
-    <div class="span9" id="section">
+    <div class="span9 right-column" id="section">
     </div>
   </div>
   <div class="navbar navbar-inverse navbar-fixed-bottom">
@@ -90,6 +120,9 @@
                       <form class="navbar-search">
   <input type="text" class="search-query" placeholder="Search">
 </form>
+<div class="results">
+
+</div>
 
                       </script><!--END TEMPLATES-->
 </body>
