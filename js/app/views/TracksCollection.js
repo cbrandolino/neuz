@@ -1,4 +1,5 @@
 goog.provide('Views.TracksCollection')
+goog.require('Helpers')
 
 App.views.tracksCollection = Backbone.View.extend({
   initialize: function() {
@@ -11,8 +12,9 @@ App.views.tracksCollection = Backbone.View.extend({
   },
   renderTracks: function() {
     _.each(this.collection.models, function(model) {
-      console.log(model.toJSON())
-      var template = _.template($('#track').html(), model.toJSON())
+      var model = model.toJSON()
+      model.prettyRuntime = App.helpers.prettyRuntime(model.duration)
+      var template = _.template($('#track').html(), model)
       this.$('.tracks').append(template)
     })
   }
