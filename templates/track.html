@@ -1,20 +1,9 @@
 <tr data-track-id="<%=id%>">
   <td>
     <div class="track-controls">
-      <div class="play-now track-play-icon icon-play"></div>
-      <div class="more">
-        <div class="buttons">
-          <button class="btn btn-small add-to-queue">
-            <i class="icon-play-circle"></i>
-            Add to play queue
-          </button>
-          <button class="btn btn-small add-to-playlist">
-            <i class="icon-list"></i> 
-            Add to playlist...
-          </button>
-        </div>
-        <img src="<%=artwork_url || user.avatar_url%>" />
-      </div>
+      <div class="play-now track-icons icon-play"></div>
+      <div class="add-to-queue track-icons icon-plus-sign"></div>
+      <img class="list-cover" src="<%=artwork_url || user.avatar_url%>" />
     </div>
   </td>
   <td>
