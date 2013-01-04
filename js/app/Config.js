@@ -4,6 +4,7 @@ var App         = {}
 App.views       = {}
 App.models      = {}
 App.collections = {}
+App.vent        = _.extend({}, Backbone.Events)
 
 App.baseUrl = 'http://127.0.0.1/player/'
 

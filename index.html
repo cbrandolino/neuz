@@ -31,8 +31,49 @@
   </div>
 </div>
 
+                      </script><script type='text/template' id='player'>
+                      <div class="span2 track-info" id="current-track-info">
+<% if (track) { %>
+  <div class="info-text">
+    <div class="title">
+      <div class="fulltext">
+        <%=track.title%>
+      </div>
+    </div>
+    <div class="user">
+      <div class="fulltext">
+        <%=track.user.username%>
+      </div>
+    </div>
+    <div class="playtime">
+      <span class="elapsed">0:00</span> /
+      <span class="total"><%=helpers.prettyRuntime(track.duration)%></span>
+    </div>
+  </div>
+  <img class="info-img" src="<%=track.artwork_url || track.user.avatar_url%>" />
+<% } %>
+</div>
+<div class="span2" id="player-controls">
+  <div class="btn-group">
+    <button class="btn btn-inverse play-pause" data-status="paused">
+      <i class="icon-play icon-white"></i>
+    </button>
+    <button class="btn btn-inverse">
+      <i class="icon-chevron-right icon-white next"></i>
+    </button>
+  </div>
+</div>
+<div class="span8" id="current-track-wave">
+<% if (track) { %>
+  <div class="portion-loaded"></div>
+  <div class="portion-played"></div>
+  <div class="cursor"></div>
+  <img class="waveform" src="<%=track.waveform_url%>" />
+<% } %>
+</div>
+
                       </script><script type='text/template' id='tracks-collection'>
-                      <table class="track-list table table-hover">
+                      <table class="track-list table table-striped">
   <thead>
     <tr>
       <th></th>
@@ -46,9 +87,24 @@
 </table>
 
                       </script><script type='text/template' id='track'>
-                      <tr>
+                      <tr data-track-id="<%=id%>">
   <td>
-    <img width=20 height=20 src="<%=artwork_url || user.avatar_url%>" />
+    <div class="track-controls">
+      <div class="play-now track-play-icon icon-play"></div>
+      <div class="more">
+        <div class="buttons">
+          <button class="btn btn-small add-to-queue">
+            <i class="icon-play-circle"></i>
+            Add to play queue
+          </button>
+          <button class="btn btn-small add-to-playlist">
+            <i class="icon-list"></i> 
+            Add to playlist...
+          </button>
+        </div>
+        <img src="<%=artwork_url || user.avatar_url%>" />
+      </div>
+    </div>
   </td>
   <td>
     <%=title%>
@@ -57,7 +113,7 @@
     <%=user.username%>
   </td>
   <td>
-    <%=prettyRuntime%>
+    <%=helpers.prettyRuntime(duration)%>
   </td>
 </tr>
 
@@ -97,24 +153,37 @@
   </div>
   <div class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="navbar-inner">
-      <div class="row-fluid">
-        <div class="span2" id="player-controls">
-          <div class="btn-group">
-            <button class="btn btn-inverse">
-              <i class="icon-chevron-left icon-white prev"></i>
-            </button>
-            <button class="btn btn-inverse play-pause">
-              <i class="icon-play icon-white"></i>
-            </button>
-            <button class="btn btn-inverse">
-              <i class="icon-chevron-right icon-white next"></i>
-            </button>
-          </div>
-        </div>
+      <div class="row-fluid player">
+      </div>
+      <div class="row-fluid queue">
       </div>
     </div>
   </div>
 </div>
+
+                      </script><script type='text/template' id='queue'>
+                      <div class="span12 queue-container">
+<% _.each(tracks, function(track) { %>
+  <div class="queued-track-info track-info">
+    <div class="info-text">
+      <div class="title">
+        <div class="fulltext">
+          <%=track.title%>
+        </div>
+      </div>
+      <div class="user">
+        <div class="fulltext">
+          <%=track.user.username%>
+        </div>
+      </div>
+      <div class="playtime">
+        <span class="total"><%=helpers.prettyRuntime(track.duration)%></span>
+      </div>
+    </div>
+    <img class="info-img" src="<%=track.artwork_url || track.user.avatar_url%>" />
+  </div>
+<% }) %>
+</div> 
 
                       </script><script type='text/template' id='search'>
                       <form class="navbar-search">

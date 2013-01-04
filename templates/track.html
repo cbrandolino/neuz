@@ -1,6 +1,21 @@
-<tr>
+<tr data-track-id="<%=id%>">
   <td>
-    <img width=20 height=20 src="<%=artwork_url || user.avatar_url%>" />
+    <div class="track-controls">
+      <div class="play-now track-play-icon icon-play"></div>
+      <div class="more">
+        <div class="buttons">
+          <button class="btn btn-small add-to-queue">
+            <i class="icon-play-circle"></i>
+            Add to play queue
+          </button>
+          <button class="btn btn-small add-to-playlist">
+            <i class="icon-list"></i> 
+            Add to playlist...
+          </button>
+        </div>
+        <img src="<%=artwork_url || user.avatar_url%>" />
+      </div>
+    </div>
   </td>
   <td>
     <%=title%>
@@ -9,6 +24,6 @@
     <%=user.username%>
   </td>
   <td>
-    <%=prettyRuntime%>
+    <%=helpers.prettyRuntime(duration)%>
   </td>
 </tr>

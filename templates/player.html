@@ -1,0 +1,39 @@
+<div class="span2 track-info" id="current-track-info">
+<% if (track) { %>
+  <div class="info-text">
+    <div class="title">
+      <div class="fulltext">
+        <%=track.title%>
+      </div>
+    </div>
+    <div class="user">
+      <div class="fulltext">
+        <%=track.user.username%>
+      </div>
+    </div>
+    <div class="playtime">
+      <span class="elapsed">0:00</span> /
+      <span class="total"><%=helpers.prettyRuntime(track.duration)%></span>
+    </div>
+  </div>
+  <img class="info-img" src="<%=track.artwork_url || track.user.avatar_url%>" />
+<% } %>
+</div>
+<div class="span2" id="player-controls">
+  <div class="btn-group">
+    <button class="btn btn-inverse play-pause" data-status="paused">
+      <i class="icon-play icon-white"></i>
+    </button>
+    <button class="btn btn-inverse">
+      <i class="icon-chevron-right icon-white next"></i>
+    </button>
+  </div>
+</div>
+<div class="span8" id="current-track-wave">
+<% if (track) { %>
+  <div class="portion-loaded"></div>
+  <div class="portion-played"></div>
+  <div class="cursor"></div>
+  <img class="waveform" src="<%=track.waveform_url%>" />
+<% } %>
+</div>

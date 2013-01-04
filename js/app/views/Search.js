@@ -29,7 +29,14 @@ App.views.search = Backbone.View.extend({
     }
     var searchCollection = new App.collections.tracksSearchResult(options)
     var el = this.$('.results')[0]
-    new App.views.tracksCollection({
+
+    // In case we already have a results view, unbind its events
+    // before creating a new one
+    if (this.resultsView) 
+      this.resultsView.$el.removeData().unbind()
+
+    // Instantiate a generic tracksCollection view with our results
+    this.resultsView = new App.views.tracksCollection({
       collection: searchCollection,
       el: el
     })

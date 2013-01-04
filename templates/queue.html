@@ -1,0 +1,22 @@
+<div class="span12 queue-container">
+<% _.each(tracks, function(track) { %>
+  <div class="queued-track-info track-info">
+    <div class="info-text">
+      <div class="title">
+        <div class="fulltext">
+          <%=track.title%>
+        </div>
+      </div>
+      <div class="user">
+        <div class="fulltext">
+          <%=track.user.username%>
+        </div>
+      </div>
+      <div class="playtime">
+        <span class="total"><%=helpers.prettyRuntime(track.duration)%></span>
+      </div>
+    </div>
+    <img class="info-img" src="<%=track.artwork_url || track.user.avatar_url%>" />
+  </div>
+<% }) %>
+</div> 

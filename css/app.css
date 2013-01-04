@@ -17,8 +17,33 @@
   Generic track list, with cover images and all.
 */
 
+.track-list > .tracks .track-controls > .track-play-icon {
+  width: 20px;
+  height: 20px;
+}
 
-
+.track-list > .tracks .track-controls > .more {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 3px;
+  border: 1px solid #ddd;
+}
+.track-list > .tracks .track-controls:hover > .more {
+  display: block;
+}
+.track-list > .tracks .track-controls > .more > .buttons {
+  display: inline-block;
+}
+.track-list > .tracks .track-controls > .more > .buttons > .btn {
+  width: 138px;
+  display: block;
+}
+.track-list > .tracks .track-controls > .more > img {
+  width: 52px;
+  height: 52px;
+  vertical-align: top;
+}
 /*
   #SPLASH-CONTAINER
 
@@ -99,15 +124,23 @@
 }
 
 /*
+  .QUEUE
+
+  The play queue
+*/
+
+
+
+/*
   #PLAYER-CONTROLS
 
-  Play/pause, previous and next buttons.
+  Play/pause, next buttons.
 
   Path: div#app > div.container-fluid > div.navbar > div.navbar-inner
 */
 
 #player-controls > .btn-group {
-  padding-left: 20px;
+  margin-top: 6px;
 }
 
 #player-controls > .btn-group > .btn:first-child {
@@ -127,4 +160,82 @@
   -moz-border-radius-bottomright: 4px;
   -moz-border-radius-topright: 4px;
 }
+/*
+  .TRACK-INFO
 
+  Track information, used both in the queue and the player
+*/
+.track-info {
+  margin-top: 5px;
+  height: 39px;
+  display: inline-block;
+}
+
+.queued-track-info.track-info > .info-text {
+  width: 160px;
+}
+
+.track-info > .info-text {
+  display: inline-block;
+  font-size: 12px;
+  color: #eee;
+  line-height: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.track-info > .info-img{
+  width: 30px;
+  height: 30px;
+  vertical-align: top;
+}
+
+/*
+  #CURRENT-TRACK-WAVE
+    
+  Soundcloud track wave visualization, also acts as track control
+*/
+#current-track-wave {
+  height: 30px;
+  overflow: hidden;
+  margin-top: 6px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+#current-track-wave > img.waveform,
+#current-track-wave > div.cursor,
+#current-track-wave > div.portion-loaded,
+#current-track-wave > div.portion-played {
+  position: relative;
+  height: 30px;
+}
+
+#current-track-wave > div.portion-loaded {
+  background-color: #777;
+  width: 0;
+  z-index: 10301;
+}
+
+#current-track-wave > div.portion-played {
+  border-right: 1px solid #f00;
+  background-color: #333;
+  width: 0;
+  z-index: 10302;
+  top: -30px;
+}
+
+#current-track-wave > div.cursor {
+  opacity: 0;
+  background-color: #f00;
+  width: 2px;
+  z-index: 10303;
+  top: -60px;
+}
+
+#current-track-wave > img.waveform {
+  width: 100%;
+  z-index: 10304;
+  top: -90px;
+}
