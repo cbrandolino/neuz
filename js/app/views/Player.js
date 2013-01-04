@@ -48,6 +48,9 @@ App.views.player = Backbone.View.extend({
         this.nowPlaying.resume()
       else
         this.nowPlaying.play({
+          onplay: function() {
+            App.vent.trigger('player:changed')
+          },
           whileplaying: function() {
             self.updateIndicator(
               self.nowPlaying.position / self.model.get('duration'),
@@ -60,6 +63,9 @@ App.views.player = Backbone.View.extend({
               self.nowPlaying.bytesLoaded / self.nowPlaying.bytesTotal,
               'loaded'
             )
+          },
+          onfinish: function() {
+            self.next()
           }
         })
     }
@@ -80,7 +86,6 @@ App.views.player = Backbone.View.extend({
     }
   },
   next: function() {
-    console.log('pressed')
     App.vent.trigger('player:next')
   },
   wavePosToMillisecs: function() {

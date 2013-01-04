@@ -164,7 +164,7 @@
                       </script><script type='text/template' id='queue'>
                       <div class="span12 queue-container">
 <% _.each(tracks, function(track) { %>
-  <div class="queued-track-info track-info">
+  <div class="queued-track-info track-info<%=(current == track.id)? " current" : ""%>">
     <div class="info-text">
       <div class="title">
         <div class="fulltext">

@@ -25,7 +25,7 @@ App.views.tracksCollection = Backbone.View.extend({
   play: function(e) {
     var trackId = $(e.target).closest('tr').attr('data-track-id')
     App.player.load(this.collection.get(trackId))
-    App.queue.queue(this.collection.get(trackId))
+    App.queue.queue(this.collection.get(trackId), true)
   },
   addToQueue: function(e) {
     var trackId = $(e.target).closest('tr').attr('data-track-id')
