@@ -12,7 +12,6 @@ App.views.user = Backbone.View.extend({
     var templateData = {
       user: this.model.toJSON()
     }
-    console.log(templateData.user)
     var template = _.template($('#user').html(), templateData)
     this.$el.html(template)
   }

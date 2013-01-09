@@ -111,31 +111,7 @@
   <div class="row-fluid">
     <div class="span2 left-column">
       <ul class="nav nav-list" id="sidenav">
-        <li class="<%=(active == "home") ? 'active' : ''%>">
-          <a href="#" data-section="home">
-            <i class="icon-chevron-right"></i>
-            Home
-          </a>
-        </li>
-        <li class="<%=(active == "search") ? 'active' : ''%>">
-          <a href="#" data-section="search">
-            <i class="icon-chevron-right"></i>
-            Search
-          </a>
-        </li>
-        <li class="<%=(active == "now-playing") ? 'active' : ''%>">
-          <a href="#" data-section="now-playing">
-            <i class="icon-chevron-right"></i>
-            Now playing
-          </a>
-        </li>
-        <li class="<%=(active == "playlists") ? 'active' : ''%>">
-          <a href="#" data-section="playlists">
-            <i class="icon-chevron-right"></i>
-            Playlists
-          </a>
-        </li>
-      </ul>
+     </ul>
     </div>
     <div class="span9 right-column" id="section">
     </div>
@@ -173,6 +149,33 @@
   </div>
 <% }) %>
 </div> 
+
+                      </script><script type='text/template' id='main-nav'>
+                      <li class="<%=(active == "home") ? 'active' : ''%>">
+  <a href="#" data-section="home">
+    <i class="icon-chevron-right"></i>
+    Home
+  </a>
+</li>
+<li class="<%=(active == "search") ? 'active' : ''%>">
+  <a href="#" data-section="search">
+    <i class="icon-chevron-right"></i>
+    Search
+  </a>
+</li>
+<li class="<%=(active == "now-playing") ? 'active' : ''%>">
+  <a href="#" data-section="now-playing">
+    <i class="icon-chevron-right"></i>
+    Now playing
+  </a>
+</li>
+<li class="<%=(active == "playlists") ? 'active' : ''%>">
+  <a href="#" data-section="playlists">
+    <i class="icon-chevron-right"></i>
+    Playlists
+  </a>
+</li>
+
 
                       </script><script type='text/template' id='user'>
                       <div class="row-fluid">

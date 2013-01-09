@@ -14,15 +14,29 @@ App.views.main = Backbone.View.extend({
 
   },
   render: function() {
-    var templateData = {
-      active: this.activeSection
-    }
-    var template = _.template($('#main').html(), templateData)
+    var template = _.template($('#main').html())
     this.$el.html(template)
+    this.renderSection()
+  },
+  renderSection: function() {
+    if (this.view)
+      this.view.remove()
+
     this.$('#section').html($('<div>'))
     this.view = new App.views[this.activeSection]({
       el: this.$('#section').children('div'), 
       subResource: this.subResource
     })
+
+    var templateData = {
+      active: this.activeSection
+    }
+    var template = _.template($('#main-nav').html(), templateData) 
+    this.$('#sidenav').html(template)
+  },
+  navigate: function(activeSection, subResource) {
+    this.activeSection = activeSection || 'search'
+    this.subResource = subResource || null
+    this.renderSection() 
   }
 })
